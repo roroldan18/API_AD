@@ -22,7 +22,7 @@ public class EditorialController {
 
 
     @GetMapping("/name/{name}")
-    public Optional<List<Editorial>> getEditorialByName(@PathVariable("name") String name){
+    public List<Editorial> getEditorialByName(@PathVariable("name") String name){
         return editorialRepository.findByName(name);
     }
 

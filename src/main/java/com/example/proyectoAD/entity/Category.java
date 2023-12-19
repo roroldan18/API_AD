@@ -8,7 +8,7 @@ public class Category {
 
     @Id
     @Column(name = "id_categoria")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nombre")

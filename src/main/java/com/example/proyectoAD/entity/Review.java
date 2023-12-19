@@ -8,6 +8,7 @@ public class Review {
 
     @Id
     @Column(name = "id_resena")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idReview;
 
     @Column(name = "opinion")

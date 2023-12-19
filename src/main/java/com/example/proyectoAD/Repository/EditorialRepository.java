@@ -10,6 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface EditorialRepository extends JpaRepository<Editorial, Long>{
-    Optional<List<Editorial>> findByName(String name);
+    List<Editorial> findByName(String name);
 
 }
