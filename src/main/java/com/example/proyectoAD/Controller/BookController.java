@@ -19,9 +19,9 @@ public class BookController {
         return bookRepository.findAll();
     }
 
-    @GetMapping("/name/{name}")
-    public List<Book> getBookByName(@PathVariable("name") String name){
-        return bookRepository.findByName(name);
+    @GetMapping("/title/{title}")
+    public List<Book> getBookByTitle(@PathVariable("title") String title){
+        return bookRepository.findByTitle(title);
     }
 
     @GetMapping("/{id}")

@@ -23,7 +23,7 @@ public class Book {
     private Editorial editorial;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria", foreignKey = @ForeignKey(name = "id_editorial"))
+    @JoinColumn(name = "id_categoria", foreignKey = @ForeignKey(name = "id_categoria"))
     private Category category;
 
     public Book() {
