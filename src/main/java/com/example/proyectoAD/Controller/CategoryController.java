@@ -1,6 +1,7 @@
 package com.example.proyectoAD.Controller;
 
 import com.example.proyectoAD.Repository.CategoryRepository;
+import com.example.proyectoAD.dto.dtoCategory;
 import com.example.proyectoAD.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,15 @@ public class CategoryController {
     }
 
     @PostMapping("/")
-    public Category createCategory(@RequestBody Category category){
+    public Category createCategory(@RequestBody dtoCategory newCategory){
+
+        Category category = categoryRepository.findByName(newCategory.getName()).stream().findFirst().orElse(null);
+        if(category != null){
+            throw new RuntimeException("La categoria ya existe");
+        }
+
+        category = new Category(newCategory.getName());
+
         return categoryRepository.save(category);
     }
 

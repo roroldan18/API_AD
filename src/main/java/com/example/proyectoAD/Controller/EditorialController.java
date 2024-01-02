@@ -34,6 +34,8 @@ public class EditorialController {
 
     @DeleteMapping("/{id}")
     public void deleteEditorialById(@PathVariable("id") Long id){
+        Editorial editorial = editorialRepository.findById(id).orElse(null);
+        if(editorial != null)
         editorialRepository.deleteById(id);
     }
 
